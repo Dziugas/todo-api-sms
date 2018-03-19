@@ -1,0 +1,27 @@
+<h1>Daily Notes</h1>
+
+<p>Please enter a note:</p>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+{% if number == 1 %}
+    <h3>Currently you have {{number}} note </h3>
+{% else %}
+    <h3>Currently you have {{number}} notes </h3>
+{% endif %}
+
+<div class="container">
+    <ul>
+        {% for note in all_notes %}
+        <li><a href="{% url 'notes:detail' note.id %}">{{note.title}}</a></li>
+        <p>{{note.date}}</p>
+        <form action="note/{{note.id}}/delete" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+        {% endfor %}
+    </ul>
+</div>
