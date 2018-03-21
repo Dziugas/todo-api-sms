@@ -11,6 +11,9 @@ urlpatterns = [
     url(r'^notes/(?P<note_id>[0-9]+)/edit$', views.note_edit, name='note_edit'),
 
     # API urls
-    url(r'^api/$', views.ListCreateNote.as_view(), name='api'),
-
+    url(r'^api/v1/notes/$', views.ListCreateNote.as_view(), name='note_list'),
+    url(r'^api/v1/notes/(?P<pk>\d+)/$',
+        views.RetrieveUpdateDestroyNote.as_view(),
+        name = 'note_detail'
+        ),
 ]

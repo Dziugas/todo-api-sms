@@ -1,0 +1,8 @@
+<h1>Daily Notes</h1>
+
+<p>Please edit your note:</p>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>

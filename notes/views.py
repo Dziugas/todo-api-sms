@@ -50,8 +50,12 @@ def note_edit(request, note_id):
             return redirect('notes:detail', note_id)
     else:
         form = NoteForm(instance=note)
-    return render(request, 'notes/index.html', {'form':form})
+    return render(request, 'notes/edit.html', {'form':form})
 
 class ListCreateNote(generics.ListCreateAPIView):
+    queryset = models.Notes.objects.all()
+    serializer_class = serializers.NoteSerializer
+
+class RetrieveUpdateDestroyNote(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Notes.objects.all()
     serializer_class = serializers.NoteSerializer
