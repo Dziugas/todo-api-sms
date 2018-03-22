@@ -24,12 +24,15 @@ def index(request):
         form = NoteForm()
     number = Notes.objects.all().count()
     modulus = number % 10
-    return render(request, 'notes/index.html', {'all_notes' : all_notes, 'form' : form, 'number':number, 'modulus':modulus})
+    return render(request, 'notes/index.html',
+                  {'all_notes': all_notes, 'form': form, 'number': number, 'modulus': modulus})
+
 
 def detail(request, note_id):
     note = Notes.objects.get(pk=note_id)
     form = DeleteNote()
-    return render(request, 'notes/detail.html', {'note' : note, 'form' : form})
+    return render(request, 'notes/detail.html', {'note': note, 'form': form})
+
 
 def delete_note(request, note_id):
     note_to_delete = get_object_or_404(Notes, pk=note_id)
@@ -40,7 +43,8 @@ def delete_note(request, note_id):
             return redirect('notes:index')
     else:
         return render(request, 'notes/if_delete.html')
-    return render(request, 'notes/index.html', {'form' : form})
+    return render(request, 'notes/index.html', {'form': form})
+
 
 def note_edit(request, note_id):
     note = get_object_or_404(Notes, pk=note_id)
@@ -52,7 +56,8 @@ def note_edit(request, note_id):
             return redirect('notes:detail', note_id)
     else:
         form = NoteForm(instance=note)
-    return render(request, 'notes/edit.html', {'form':form})
+    return render(request, 'notes/edit.html', {'form': form})
+
 
 class IsSuperUser(permissions.BasePermission):
     def has_permission(self, request, view):
@@ -64,13 +69,16 @@ class IsSuperUser(permissions.BasePermission):
             else:
                 return True
 
+
 class ListCreateNote(generics.ListCreateAPIView):
     queryset = models.Notes.objects.all()
     serializer_class = serializers.NoteSerializer
 
+
 class RetrieveUpdateDestroyNote(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Notes.objects.all()
     serializer_class = serializers.NoteSerializer
+
 
 class NoteViewSet(viewsets.ModelViewSet):
     permission_classes = (

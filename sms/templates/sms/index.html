@@ -2,25 +2,19 @@
 <html lang="en">
 
 <head>
-	<title>Hidro SMS</title>
+	<title>SMS</title>
 	<meta charset="utf-8" />
-	<!--{% load staticfiles %}-->
-	<!--<link rel="stylesheet" href="{% static 'sms/css/bootstrap.min.css' %}" type = "text/css"/>-->
-    <!--<meta name="viewport" content = "width=device-width, initial-scale=1.0">-->
 </head>
 
 <body class="body" style="background-color:f6f6f6#">
         <h1 style="text-align:center">Notes from SMS:</h1>
         <br>
         <div class="container-fluid">
-            <table>{% for message in resources %}
-                <div class="row" style="margin: 20px; border-bottom-style:groove; ">
-                    <tr>
-                            <div class="col-md-3" >{{message.date_sent}}</div>
-                            <div class="col-md-7" >{{message.body}}</div>
-                    </tr>
-                </div>
-                {% endfor %}
-            </table>
+            {% for message in messages %}
+            <li><div class="col-md-3" >Date: {{message.date_sent}}</div></li>
+            <div class="col-md-7" >Text: {{message.body}}</div>
+            <div class="col-md-7" >From: {{message.from_}}</div>
+            {% endfor %}
+
         </div>
 </body>
