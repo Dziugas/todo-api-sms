@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from rest_framework import generics
+from rest_framework import viewsets
+from rest_framework import permissions
 
 from . import models
 from .models import Notes
@@ -52,10 +54,28 @@ def note_edit(request, note_id):
         form = NoteForm(instance=note)
     return render(request, 'notes/edit.html', {'form':form})
 
+class IsSuperUser(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if request.user.is_superuser:
+            return True
+        else:
+            if request.method == 'DELETE':
+                return False
+            else:
+                return True
+
 class ListCreateNote(generics.ListCreateAPIView):
     queryset = models.Notes.objects.all()
     serializer_class = serializers.NoteSerializer
 
 class RetrieveUpdateDestroyNote(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Notes.objects.all()
+    serializer_class = serializers.NoteSerializer
+
+class NoteViewSet(viewsets.ModelViewSet):
+    permission_classes = (
+        IsSuperUser,
+        permissions.DjangoModelPermissions,
+    )
     queryset = models.Notes.objects.all()
     serializer_class = serializers.NoteSerializer
