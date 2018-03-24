@@ -10,7 +10,6 @@ from .forms import NoteForm, DeleteNote
 
 from . import serializers
 
-
 def index(request):
     all_notes = Notes.objects.all().order_by('-date')
     if request.method == "POST":

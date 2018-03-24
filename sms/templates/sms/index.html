@@ -2,19 +2,29 @@
 <html lang="en">
 
 <head>
-	<title>SMS</title>
-	<meta charset="utf-8" />
+    <title>SMS</title>
+    <meta charset="utf-8"/>
 </head>
 
-<body class="body" style="background-color:f6f6f6#">
-        <h1 style="text-align:center">Notes from SMS:</h1>
-        <br>
-        <div class="container-fluid">
-            {% for message in messages %}
-            <li><div class="col-md-3" >Date: {{message.date_sent}}</div></li>
-            <div class="col-md-7" >Text: {{message.body}}</div>
-            <div class="col-md-7" >From: {{message.from_}}</div>
-            {% endfor %}
+<body class="">
+<h1>SMS Notes</h1>
+<p>Send a message with text to +37068735945</p>
+<h3>Currently you have {{number}} SMS</h3>
+<br>
+<div class="container-fluid">
+    {% for message in messages %}
+    <li>
+        <div class="col-md-3">Date: {{message.date_sent}}</div>
+    </li>
+    <div class="col-md-7">Text: {{message.body}}</div>
+    <div class="col-md-7">From: {{message.from_}}</div>
+    <div class="col-md-7">ID: {{message.sid}}</div>
 
-        </div>
+    <form action="delete" method="post">
+        {% csrf_token %}
+        <input type="hidden" name ="message_sid" value="{{ message.sid }}">
+        <button type="submit">Delete</button>
+    </form>
+    {% endfor %}
+</div>
 </body>
