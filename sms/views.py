@@ -22,8 +22,8 @@ def detail(request, message_sid):
     ACCOUNT_SID = "AC5c35aba82906314a02e40242af329c0b"
     AUTH_TOKEN = "cd8ce24c9f427e17b92cca8f91bee39c"
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
-    message = client.messages(sid=message_sid).fetch()
-    return render(request, 'sms/detail.html', {'message : message')
+    message = client.messages(message_sid).fetch()
+    return render(request, 'sms/detail.html', {'message' : message})
 
 
 
