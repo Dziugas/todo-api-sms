@@ -17,12 +17,14 @@ def index(request):
     number = len(messages)
     return render(request, 'sms/index.html', {'messages' : messages, 'number' : number})
 
-def detail(request, message_id):
+def detail(request, message_sid):
+    #kazkaip nepagauna message_sid
     ACCOUNT_SID = "AC5c35aba82906314a02e40242af329c0b"
     AUTH_TOKEN = "cd8ce24c9f427e17b92cca8f91bee39c"
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
-    messages = client.messages.list()
-    return render(request, 'sms/detail.html', {'messages' : messages})
+    message = client.messages(sid=message_sid).fetch()
+    return render(request, 'sms/detail.html', {'message : message')
+
 
 
 

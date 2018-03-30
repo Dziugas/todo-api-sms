@@ -14,7 +14,7 @@
 <div class="container-fluid">
     {% for message in messages %}
     <li>
-    <a href="{% url 'sms:detail' message_id=message.sid %}">{{message.sid}}</a>
+    <a href="{% url 'sms:detail' message.sid %}">{{message.sid}}</a>
     <div class="col-md-3">Date: {{message.date_sent}}</div>
     <div class="col-md-7">From: {{message.from_}}</div>
     </li>
