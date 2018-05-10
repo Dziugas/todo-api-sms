@@ -17,7 +17,6 @@ def index(request):
     return render(request, 'sms/index.html', {'messages' : messages, 'number' : number})
 
 def detail(request, message_sid):
-    #kazkaip nepagauna message_sid
     ACCOUNT_SID = "AC5c35aba82906314a02e40242af329c0b"
     AUTH_TOKEN = "cd8ce24c9f427e17b92cca8f91bee39c"
     client = Client(ACCOUNT_SID, AUTH_TOKEN)
@@ -31,10 +30,6 @@ def delete_sms(request):
     message_id = request.POST.get('message_sid', None)
     client.messages(message_id).delete()
     return redirect('sms:index')
-
-def edit_sms(request):
-    message_id = request.GET.get('message_sid')
-    return render (request, 'sms/edit.html', {'message_id':message_id})
 
 
 
