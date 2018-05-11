@@ -1,3 +1,5 @@
+{% extends 'base_layout.html' %}
+{% block content %}
 <h1>{{note.title}}</h1>
 <br>
 <div>{{note.text}}</div>
@@ -20,3 +22,4 @@
 <p>
     <a href="/notes/">Back to the main page</a>
 </p>
+{% endblock %}

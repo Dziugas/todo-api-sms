@@ -1,3 +1,5 @@
+{% extends 'base_layout.html' %}
+{% block content %}
 <h1>Daily Notes</h1>
 
 <p>Please edit your note:</p>
@@ -6,3 +8,4 @@
     {{ form.as_p }}
     <button type="submit">Save</button>
 </form>
+{% endblock %}
