@@ -12,8 +12,97 @@
     <title></title>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+<header>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Web Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SMS Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">APIs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="jumbotron jumbotron-fluid bg-danger">
+    <div class="container">
+        <p class="display-1">
+            Your To-Do App.
+        </p>
+        <p class="lead">
+            Web and SMS service to keep your notes. Clear your head anytime anywhere. Be Water.
+        </p>
+    </div>
+</div>
+{% block content %}
+{% endblock %}
+<!--Footer-->
+<footer class="page-footer font-small pt-4 mt-4">
+
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left bg-danger">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Your To-Do App</h5>
+                <p>Check out our APIs. Don't hesitate to send us a message!</p>
+            </div>
+
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Go to:</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">API v1</a>
+                    </li>
+                    <li>
+                        <a href="#!">API v2</a>
+                    </li>
+                    <li>
+                        <a href="#!">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#!">Home</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright bg-dark py-3 text-center">
+        © 2018 Copyright:
+        <a href="http://dziu-dzitsu.tech"> dziu-dzitsu.tech </a>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
