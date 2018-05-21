@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,9 +15,6 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">Navbar</a>
-
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -29,13 +27,10 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Web Notes</a>
+                    <a class="nav-link" href="/notes/">Web Notes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">SMS Notes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">APIs</a>
+                    <a class="nav-link" href="/sms/">SMS Notes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -46,51 +41,59 @@
 </header>
 <div class="jumbotron jumbotron-fluid bg-danger">
     <div class="container">
-        <p class="display-1">
-            Your To-Do App.
-        </p>
-        <p class="lead">
-            Web and SMS service to keep your notes. Clear your head anytime anywhere. Be Water.
-        </p>
+        <div class="row">
+            <p class="display-1">
+                Your To-Do App
+            </p>
+
+        </div>
+        <div class="row">
+            <p class="lead">
+                Web and SMS service for your notes. Keep a clean head anytime anywhere. Be Water.
+            </p>
+        </div>
     </div>
 </div>
-{% block content %}
-{% endblock %}
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
 <!--Footer-->
 <footer class="page-footer font-small pt-4 mt-4">
 
     <!--Footer Links-->
     <div class="container-fluid text-center text-md-left bg-danger">
-        <div class="row">
 
+        <div class="container">
+            <div class="row">
             <!--First column-->
-            <div class="col-md-6">
-                <h5 class="text-uppercase">Your To-Do App</h5>
-                <p>Check out our APIs. Don't hesitate to send us a message!</p>
+            <div class="col-md-6 p-3">
+                <p class="lead">Check out our APIs. Don't hesitate to send us a message!</p>
             </div>
 
             <!--/.First column-->
-
             <!--Second column-->
-            <div class="col-md-6">
-                <h5 class="text-uppercase">Go to:</h5>
+            <div class="col-md-6 p-3">
+                <!--<h5 class="lead">Go to:</h5>-->
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">API v1</a>
+                        <a href="/notes/api/v1/notes/">API v1</a>
                     </li>
                     <li>
-                        <a href="#!">API v2</a>
+                        <a href="/notes/api/v2/notes/">API v2</a>
                     </li>
                     <li>
                         <a href="#!">Contact</a>
                     </li>
                     <li>
-                        <a href="#!">Home</a>
+                        <a href="#">Home</a>
                     </li>
                 </ul>
             </div>
             <!--/.Second column-->
         </div>
+        </div>
+
     </div>
     <!--/.Footer Links-->
 
