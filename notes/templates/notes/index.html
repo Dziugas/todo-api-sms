@@ -23,7 +23,7 @@
         <p>{{note.date}}</p>
         <form action="note/{{note.id}}/delete" method="post">
             {% csrf_token %}
-            <button type="submit">Delete</button>
+            <button class="btn btn-danger" type="submit">Delete</button>
         </form>
         {% endfor %}
     </ul>

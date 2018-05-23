@@ -1,25 +1,31 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-<h1>{{note.title}}</h1>
-<br>
-<div>{{note.text}}</div>
-<br>
-<div>Date: {{note.date}}</div>
-<br>
+<div class="container-fluid">
+    <div class="lead">
+        <br>
+        <h3>{{note.title}}</h3>
+        <br>
+        <p><strong>Text</strong>: {{note.text}}</p>
+        <br>
+        <p><strong>Date: </strong>{{note.date}}</p>
+        <br>
+    </div>
+    <div class="row">
+        <div class="m-2">
+            <form action="edit" method="get">
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Edit</button>
+            </form>
 
-<form action="edit" method="get">
-    {% csrf_token %}
-    <button type="submit">Edit</button>
-</form>
+        </div>
+        <div class="m-2">
+            <form action="delete" method="post">
+                {% csrf_token %}
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 
-<form action="delete" method="post">
-    {% csrf_token %}
-    <button type="submit">Delete</button>
-</form>
-
-
-<p>
-    <a href="/notes/">Back to the main page</a>
-</p>
 {% endblock %}

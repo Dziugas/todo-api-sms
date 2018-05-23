@@ -1,8 +1,25 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-<body>
-    {{message.sid}}
-    {{message.body}}
-    {{message.date}}
-</body>
+<div class="container-fluid">
+    <div class="lead">
+        <br>
+        <h3>
+            Message ID: {{message.sid}}
+        </h3>
+        <br>
+        <p>
+            <strong>Text: </strong>{{message.body}}
+        </p>
+        <br>
+        <p>
+            <strong>Date: </strong>{{message.date_sent}}
+        </p>
+        <br>
+    </div>
+    <form class="" action="delete" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="message_sid" value="{{ message.sid }}">
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+</div>
 {% endblock %}

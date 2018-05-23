@@ -2,22 +2,28 @@
 {% block content %}
 <body class="">
 <h1>SMS Notes</h1>
-<p>Send a message with text to +37068735945</p>
-<h3>Currently you have {{number}} SMS</h3>
+<p>Currently you have {{number}} SMS</p>
+<h3>Latest:</h3>
 <br>
 <div class="container-fluid">
-    {% for message in messages %}
-    <li>
-    <a href="{% url 'sms:detail' message.sid %}">{{message.sid}}</a>
-    <div class="col-md-3">Date: {{message.date_sent}}</div>
-    <div class="col-md-7">From: {{message.from_}}</div>
-    </li>
-    <form action="delete" method="post">
-        {% csrf_token %}
-        <input type="hidden" name ="message_sid" value="{{ message.sid }}">
-        <button type="submit">Delete</button>
-    </form>
-    {% endfor %}
+    <div class="row">
+        {% for message in messages %}
+        <div class=".d-inline-block col-5 m-4 border p-3">
+            <div>
+                <a href="{% url 'sms:detail' message.sid %}">{{message.date_sent}}</a>
+                <div>{{message.body}}</div>
+                <div class="">From: {{message.from_}}</div>
+            </div>
+
+            <form class="" action="delete" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="message_sid" value="{{ message.sid }}">
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+        </div>
+
+        {% endfor %}
+    </div>
 </div>
 </body>
 {% endblock %}
