@@ -1,31 +1,48 @@
 {% extends 'base_layout.html' %}
 {% block content %}
+<div class="container-fluid">
+    <div class="row">
+<!--List existing notes-->
 
-<h1>Web Notes</h1>
+    <div class="col-6 border-right text-center">
+        {% if number == 1 %}
+        <h3>Currently you have {{number}} note </h3>
+        {% else %}
+        <h3>Currently you have {{number}} notes </h3>
+        {% endif %}
+        <br>
+        <br>
 
-<p>Please enter a note:</p>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
-
-{% if number == 1 %}
-    <h3>Currently you have {{number}} note </h3>
-{% else %}
-    <h3>Currently you have {{number}} notes </h3>
-{% endif %}
-
-<div class="container">
-    <ul>
-        {% for note in all_notes %}
-        <li><a href="{% url 'notes:detail' note.id %}">{{note.title}}</a></li>
-        <p>{{note.date}}</p>
-        <form action="note/{{note.id}}/delete" method="post">
+        <div class="container">
+            <ul class="list-unstyled">
+                {% for note in all_notes %}
+                <div class="border p-3">
+                    <li><a href="{% url 'notes:detail' note.id %}">{{note.title}}</a></li>
+                    <p>{{note.date}}</p>
+                    <form class="m-2" action="{{note.id}}/delete" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </div>
+                <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+<!-- A box to enter new motes -->
+    <div class="col-6 text-center">
+        <h3>Enter a new note here:</h3>
+        <br>
+        <br>
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <button class="btn btn-danger" type="submit">Delete</button>
+            {{ form.as_p }}
+            <button type="submit">Save</button>
         </form>
-        {% endfor %}
-    </ul>
+    </div>
 </div>
+</div>
+
+
+
 {% endblock %}

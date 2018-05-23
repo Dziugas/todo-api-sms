@@ -1,11 +1,15 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-<h1>Daily Notes</h1>
+<div class="container-fluid lead">
+    <br>
+    <h3>Edit your note below</h3>
+    <br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-danger" type="submit">Save</button>
+    </form>
 
-<p>Please edit your note:</p>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-</form>
+</div>
+
 {% endblock %}

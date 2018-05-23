@@ -2,9 +2,8 @@
 {% block content %}
 <div class="container-fluid">
     <div class="lead">
-        <br>
         <h3>
-            Message ID: {{message.sid}}
+            {{message.sid}}
         </h3>
         <br>
         <p>
@@ -21,5 +20,7 @@
         <input type="hidden" name="message_sid" value="{{ message.sid }}">
         <button class="btn btn-danger" type="submit">Delete</button>
     </form>
+
+    <p><a href="/sms/">Back to SMS</a></p>
 </div>
 {% endblock %}
