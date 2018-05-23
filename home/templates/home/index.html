@@ -1,24 +1,17 @@
 {% extends 'base_layout.html' %}
 {% block content %}
-<head>
-    <meta charset="UTF-8">
-    <title>Welkommen</title>
-</head>
-<body>
+<div class="container-fluid text-center">
+    <h3>
+        Your notes and SMS reminders in one place.
+    </h3>
+    <div class="row">
+        <div class="col-6">
+            <p class="lead">Latest web note:</p>
+        </div>
+        <div class="col-6">
+            <p class="lead">Latest SMS:</p>
+        </div>
+    </div>
+</div>
 
-<h1>
-    Your notes and SMS reminders in one place.
-</h1>
-
-<h2>
-    Dig into your <a href="/notes/">Web notes</a>.
-    For SMS notes click <a href="/sms/">here</a>.
-    Also, check out our API <a href="/notes/api/v1/notes/">v1</a> and <a href="/notes/api/v2/notes/">v2</a>.
-</h2>
-
-<h2>Latest notes:</h2>
-<h2>Latest SMS:</h2>
-
-
-</body>
 {% endblock %}
