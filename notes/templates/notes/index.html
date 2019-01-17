@@ -6,9 +6,9 @@
 
     <div class="col-6 border-right text-center">
         {% if number == 1 %}
-        <h3>Currently you have {{number}} note </h3>
+        <div class="lead font-weight-bold">Currently you have {{number}} note </div>
         {% else %}
-        <h3>Currently you have {{number}} notes </h3>
+        <div class="lead font-weight-bold">Currently you have {{number}} notes </div>
         {% endif %}
         <br>
         <br>
@@ -31,7 +31,7 @@
     </div>
 <!-- A box to enter new motes -->
     <div class="col-6 text-center">
-        <h3>Enter a new note here:</h3>
+        <div class="lead font-weight-bold">Enter a new note here:</div>
         <br>
         <br>
         <form method="post" enctype="multipart/form-data">

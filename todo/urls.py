@@ -10,7 +10,7 @@ router.register(r'notes', views.NoteViewSet)
 
 
 urlpatterns = [
-    url('^$', include('home.urls')),
+    url('^', include('home.urls')),
     url('admin/', admin.site.urls),
     url(r'^notes/', include('notes.urls')),
     url(r'^sms/', include('sms.urls')),

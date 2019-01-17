@@ -2,9 +2,9 @@
 {% block content %}
 <div class="container-fluid">
     <div class="lead">
-        <h3>
-            {{message.sid}}
-        </h3>
+        <p>
+            <strong>ID: </strong>{{message.sid}}
+        </p>
         <br>
         <p>
             <strong>Text: </strong>{{message.body}}
@@ -15,12 +15,14 @@
         </p>
         <br>
     </div>
-    <form class="" action="delete" method="post">
+    <div>
+    <form action="delete" method="post">
         {% csrf_token %}
         <input type="hidden" name="message_sid" value="{{ message.sid }}">
         <button class="btn btn-danger" type="submit">Delete</button>
     </form>
+    </div>
 
-    <p><a href="/sms/">Back to SMS</a></p>
+    <p class="m-2"><a href="/sms/">Back to SMS</a></p>
 </div>
 {% endblock %}
