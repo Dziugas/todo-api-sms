@@ -12,10 +12,11 @@
 
     <div class="container">
         {% for message in messages %}
+        {% if message.direction == 'inbound' %}
         <div class=".d-inline-block border p-3 m-3">
             <div class="text-center">
                 <a href="{% url 'sms:detail' message.sid %}">{{message.date_sent}}</a>
-                <!--<div class="m-3">{{message.body}}</div>-->
+                <div class="m-3"></div>
                 <div class="">From: {{message.from_}}</div>
             </div>
 
@@ -25,6 +26,7 @@
                 <button class="btn btn-danger" type="submit">Delete</button>
             </form>
         </div>
+        {% endif %}
 
         {% endfor %}
     </div>
