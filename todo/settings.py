@@ -86,7 +86,7 @@ DATABASES = {
         'USER': 'opshrus',
         'PASSWORD': shmeys.PSQLPW,
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '',
     }
 }
 
