@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from . import shmeys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'daily_notes',
-        'USER': 'postgres',
-        'PASSWORD': 'test2991',
+        'USER': 'opshrus',
+        'PASSWORD': shmeys.PSQLPW,
         'HOST': 'localhost',
         'PORT': '5433',
     }
