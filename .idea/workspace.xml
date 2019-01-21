@@ -483,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548077519314</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fixed queries in home.views">
+      <created>1548077751043</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1548077751043</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -564,7 +571,8 @@
     <MESSAGE value="added static folder" />
     <MESSAGE value="changed db settings" />
     <MESSAGE value="fixed query in home.views" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed query in home.views" />
+    <MESSAGE value="fixed queries in home.views" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed queries in home.views" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
