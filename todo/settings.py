@@ -83,10 +83,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'daily_notes',
-        'USER': 'opshrus',
+        'USER': 'postgres',
         'PASSWORD': shmeys.PSQLPW,
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5433',
     }
 }
 
