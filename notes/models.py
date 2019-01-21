@@ -8,4 +8,4 @@ class Notes(models.Model):
     author = models.CharField(default=User, max_length=50)
 
     def __str__(self):
-        return f'{self.date}'
+        return self.title

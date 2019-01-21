@@ -14,4 +14,4 @@ def index(request):
     client = Client(shmeys.ACCOUNT_SID, shmeys.AUTH_TOKEN)
     messages = client.messages.list()
     latest_sms = messages[0].date_sent
-    return render(request, 'home/index.html', {'latest_note':latest_note, 'latest_sms': latest_sms})
+    return render(request, 'home/index.html', {'latest_note': latest_note, 'latest_sms': latest_sms})

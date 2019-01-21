@@ -21,11 +21,10 @@ def detail(request, message_sid):
     message = client.messages(message_sid).fetch()
     return render(request, 'sms/detail.html', {'message' : message})
 
-def delete_sms(request):
+def delete_sms(request, message_sid):
     client = Client(shmeys.ACCOUNT_SID, shmeys.AUTH_TOKEN)
-    message_id = request.POST.get('message_sid', None)
-    client.messages(message_id).delete()
-    return redirect('sms:index')
+    client.messages(message_sid).delete()
+    redirect('sms:index')
 
 
 

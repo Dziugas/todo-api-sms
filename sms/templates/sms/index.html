@@ -20,11 +20,11 @@
                 <div class="">From: {{message.from_}}</div>
             </div>
 
-            <form class="m-3 text-center" action="delete" method="post">
+            <form class="text-center" action="{% url 'sms:delete' message.sid %}" method="post">
                 {% csrf_token %}
-                <input type="hidden" name="message_sid" value="{{ message.sid }}">
-                <button class="btn btn-danger" type="submit">Delete</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
             </form>
+
         </div>
         {% endif %}
 
