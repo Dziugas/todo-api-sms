@@ -15,7 +15,7 @@
         {% if message.direction == 'inbound' %}
         <div class=".d-inline-block border p-3 m-3">
             <div class="text-center">
-                <a href="{% url 'sms:detail' message.sid %}">{{message.date_sent}}</a>
+                <a href="{% url 'sms:detail' message.sid %}">{{message.date_sent|date:'Y M d, H:i'}}</a>
                 <div class="m-3"></div>
                 <div class="">From: {{message.from_}}</div>
             </div>

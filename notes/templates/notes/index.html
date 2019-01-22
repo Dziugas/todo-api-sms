@@ -18,7 +18,7 @@
                 {% for note in all_notes %}
                 <div class="border p-3">
                     <li><a href="{% url 'notes:detail' note.id %}">{{note.title}}</a></li>
-                    <p>{{note.date}}</p>
+                    <p>{{note.date|date:'Y M d, H:i'}}</p>
                     <form class="m-2" action="{{note.id}}/delete" method="post">
                         {% csrf_token %}
                         <button class="btn btn-danger" type="submit">Delete</button>
