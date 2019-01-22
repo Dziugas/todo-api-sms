@@ -12,9 +12,9 @@
     <title>
         {% if request.path == '/'%}
                 My
-        {% elif request.path == '/sms/'%}
+        {% elif '/sms/' in request.path %}
                 SMS
-        {% elif request.path == '/notes/' %}
+        {% elif '/notes/' in request.path %}
                 Web
         {% endif %}
                 Notes
@@ -51,11 +51,11 @@
             <p class="display-1">
                 My Notes
             </p>
-        {% elif request.path == '/sms/'%}
+        {% elif '/sms/' in request.path %}
             <p class="display-1">
                 SMS Notes
             </p>
-        {% elif request.path == '/notes/' %}
+        {% elif '/notes/' in request.path %}
             <p class="display-1">
                 Web Notes
             </p>

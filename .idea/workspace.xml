@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f2cec47a-df62-4d73-8171-1c8337d20865" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base_layout.html" afterPath="$PROJECT_DIR$/templates/base_layout.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,18 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/todo/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="93" column="18" lean-forward="false" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="18" />
-              <folding>
-                <element signature="e#305#314#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notes/models.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -49,11 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shmeys.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shmeys.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo/shmeys.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+              <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_layout.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/base_layout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -169,7 +168,6 @@
         <option value="$PROJECT_DIR$/static/styles.css" />
         <option value="$PROJECT_DIR$/deploy_tools/nginx.template.conf" />
         <option value="$PROJECT_DIR$/deploy_tools/gunicorn-systemd.template.service" />
-        <option value="$PROJECT_DIR$/templates/base_layout.html" />
         <option value="$PROJECT_DIR$/todo/keys.py" />
         <option value="$PROJECT_DIR$/deploy_tools/fabfile.py" />
         <option value="$PROJECT_DIR$/manage.py" />
@@ -182,6 +180,7 @@
         <option value="$PROJECT_DIR$/sms/views.py" />
         <option value="$PROJECT_DIR$/sms/templates/sms/detail.html" />
         <option value="$PROJECT_DIR$/todo/shmeys.py" />
+        <option value="$PROJECT_DIR$/templates/base_layout.html" />
       </list>
     </option>
   </component>
@@ -250,6 +249,11 @@
               <item name="sms" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="sms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="todo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="todo" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="todo" type="b2602c69:ProjectViewProjectNode" />
@@ -551,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548155722766</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Merge branch 'master' of https://github.com/Dziugas/todo-api-sms&#10;&#10;# Conflicts:&#10;#&#9;todo/shmeys.py">
+      <created>1548156015271</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1548156015271</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -860,13 +871,6 @@
     <entry file="file://$PROJECT_DIR$/notes/static/bootstrap/js/bootstrap.js" />
     <entry file="file://$PROJECT_DIR$/sms/static/bootstrap/js/bootstrap.js" />
     <entry file="file://$PROJECT_DIR$/home/static/bootstrap/js/bootstrap.js" />
-    <entry file="file://$PROJECT_DIR$/templates/base_layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy_tools/fabfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
@@ -982,7 +986,15 @@
     <entry file="file://$PROJECT_DIR$/todo/shmeys.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <caret line="3" column="10" lean-forward="true" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base_layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
           <folding />
         </state>
       </provider>
