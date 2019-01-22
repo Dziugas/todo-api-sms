@@ -9,7 +9,9 @@
         </div>
         <div class="col-6">
             <p class="lead">Latest SMS:</p>
-            <div class="display-4">{{latest_sms}}</div>
+            <div class="display-4">
+            {{latest_sms|date:'Y M d, H:i'}}
+            </div>
 
             <div class="lead"><a href="/sms/">See full list</a></div>
         </div>

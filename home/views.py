@@ -9,6 +9,7 @@ def index(request):
     try:
         latest_note = Notes.objects.latest('date')
         latest_note = latest_note.date
+        latest_note = latest_note.strftime('%Y %b %d, %H:%M')
     except Notes.DoesNotExist:
         latest_note = "Currently there are no notes"
     client = Client(shmeys.ACCOUNT_SID, shmeys.AUTH_TOKEN)
